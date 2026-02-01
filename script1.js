@@ -57,12 +57,12 @@ function calculate() {
 
 
 document.getElementById("logoInput").addEventListener("change", e => {
-    const box = document.getElementById("logoPreview");
-    box.innerHTML = "";
+    const logoPreviewImg = document.getElementById("logoPreviewImg");
+    // box.innerHTML = "";
     [...e.target.files].forEach(f => {
-        const img = document.createElement("img");
-        img.src = URL.createObjectURL(f);
-        box.appendChild(img);
+        // const img = document.createElement("img");
+        logoPreviewImg.src = URL.createObjectURL(f);
+        // box.appendChild(img);
     });
 });
 
@@ -85,3 +85,4 @@ function numberToWords(num) {
 
     return str.trim() + " Rupees Only";
 }
+
