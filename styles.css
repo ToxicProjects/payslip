@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5eeee;
+}
+
+.payslip {
+    width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-box img {
+    height: 10vh;
+    margin-left: 8px;
+}
+
+.company, .address {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.row-4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.row-4 input{
+    font-size: 17px;
+    margin: 8px 5px 5px 0px;
+}
+
+.row-1 {
+    margin: 15px 0;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.line {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    align-items: center;
+    margin: 6px 0;
+}
+
+.amount {
+    text-align: right;
+    font-family: "Courier New", monospace;
+    font-variant-numeric: tabular-nums;
+}
+
+.total {
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.net {
+    background: #f4f4f4;
+    padding: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.words {
+    margin-top: 5px;
+}
+
+.note {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+}
+
+.print-btn {
+    margin-top: 20px;
+}
+
+/* PRINT MODE */
+@media print {
+    .print-btn,
+    input[type="file"], .noprint {
+        display: none;
+    }
+
+    input, textarea {
+        border: none;
+    }
+
+    body {
+        background: #fff;
+    }
+}

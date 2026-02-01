@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payslip</title>
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <div class="payslip">
+
+        <div class="logo-box">
+            <input type="file" id="logoInput" multiple accept="image/*">
+            <div id="logoPreview"></div>
+        </div>
+        <!-- HEADER -->
+        <div class="header">
+            <div class="two-col">
+                <h3>MONTHLY PAYSLIP <input type="month" value="2026-01"></h3>
+                <div>
+                    <input type="company" value="Quarks Technosoft PVT. LTD.">
+                    <input type="text" value="Noida (HQ) : C-43, Sector 62, ">
+                    <input type="text" value="Noida - 201301">
+                </div>
+            </div>
+
+            <!-- <div class="logo-box">
+                <input type="file" id="logoInput" multiple accept="image/*">
+                <div id="logoPreview"></div>
+            </div> -->
+        </div>
+
+        <!-- <hr> -->
+
+        <div class="row-4">
+            <div>Employee Name<br><input value="Venkatachalapathi O"></div>
+            <div>Department<br><input value="Information Technology"></div>
+            <div>Designation<br><input value="Senior Software Engineer"></div>
+        </div>
+        <div class="row-4">
+            <div>Employee ID<br><input value="T202623"></div>
+            <div>Date Joined<br><input type="date" value="2026-01-09"></div>
+            <div>UAN Number<br><input value="*****8371"></div>
+        </div>
+        <div class="row-4">
+            <div>Bank Name<br><input value="Punjab National Bank"></div>
+            <div>IFSC Code<br><input value="PUNB0195710"></div>
+            <div>Account Number<br><input value="2117010051916"></div>
+        </div>
+        <!-- <hr> -->
+
+        <!-- SALARY DETAILS -->
+        <!-- <h3>SALARY DETAILS</h3> -->
+        <div class="row-4">
+            <div>Total Working Days<br><input type="number" value="31.0"></div>
+            <div>Total Payable Days<br><input type="number" value="23.0"></div>
+            <!-- <div>Loss Of Pay Days<br><input type="number" value="0.0"></div>
+            <div>Days Payable<br><input type="number" value="23.0"></div> -->
+        </div>
+
+        <hr>
+
+        <!-- EARNINGS & DEDUCTIONS -->
+        <div class="two-col">
+
+            <!-- EARNINGS -->
+            <div>
+                <h3>Gross Pay</h3>
+
+                <div class="line">
+                    <span>Basic</span>
+                    <input id="basic" class="amount" type="number" oninput="calc()">
+                </div>
+
+                <div class="line">
+                    <span>HRA</span>
+                    <input id="hra" class="amount" type="number" oninput="calc()">
+                </div>
+
+                <div class="line">
+                    <span>Other Allowance</span>
+                    <input id="other" class="amount" type="number" oninput="calc()">
+                </div>
+
+                <div class="line">
+                    <span>Bonus / Incentive</span>
+                    <input id="bonus" class="amount" type="number" value="0" oninput="calc()">
+                </div>
+
+                <div class="line total">
+                    <span>Total</span>
+                    <input id="earnings" class="amount" readonly>
+                </div>
+            </div>
+
+            <!-- DEDUCTIONS -->
+            <div>
+                <h3>PF Contribution</h3>
+
+                <div class="line">
+                    <span>PF Employee (12%)</span>
+                    <input id="pf" class="amount" value="1800" readonly>
+                </div>
+
+                <!-- <div class="line total">
+                    <span>Total Contributions (B)</span>
+                    <input id="contri" class="amount" readonly>
+                </div> -->
+
+                <h3>Deductions</h3>
+
+                <div class="line">
+                    <span>Professional Tax</span>
+                    <input id="tax" class="amount" type="number" value="200" oninput="calc()">
+
+                    <span>Labour Welfare Fund</span>
+                    <input id="lwf" class="amount" type="number" value="200" oninput="calc()">
+                </div>
+
+                <!-- <div class="line total">
+                    <span>Total Taxes (C)</span>
+                    <input id="taxTotal" class="amount" readonly>
+                </div> -->
+            </div>
+
+        </div>
+
+        <!-- NET PAY -->
+        <div class="net">
+            <div class="line">
+                <span>Net Salary Payable</span>
+                <input id="net" class="amount">
+            </div>
+            <div id="words" class="words"></div>
+        </div>
+        <div class="noprint" style="color: red;">
+            Enter you desired Salary : <input id="takeHome" type="number" oninput="calculate()">
+        </div>
+        <p class="note">**Note: All amounts displayed are in INR</p>
+        <p class="note">* This is a computer generated statement</p><br><br><br><br>
+        <!-- <footer> -->
+        <footer class="two-col">
+            <div style="text-align: left;">
+                <strong>India</strong>
+                <input type="text" value="Noida (HQ) : C-43, Sector 62, Noida - 201301">
+                <input type="text" value="New Delhi | Gurugram | Jaipur | Pune | Bangalore | Hyderabad">
+
+                <strong>USA</strong>
+                <input type="text" value="New York : 169 Madison Ave STE 11589 New York, NY 10016">
+
+                <strong>Canada</strong>
+                <input type="text" value="Mississauga : 4 Robert Speck Pkwy, Suite 1501, Mississauga - L4Z 1S1">
+
+                <strong>Singapore</strong>
+                <input type="text" value="Stanley : 28C Stanley Street, Singapore - 068737">
+            </div>
+            <div style="text-align: center;">
+                <input type="email" style="display: inline;" value="Contact Us: hrops@qtsolv.com"><br>
+                <input type="url" value="Website:      https://www.qtsolv.com">
+            </div>
+        </footer>
+        <!-- </footer> -->
+        <button class="print-btn" onclick="window.print()">Print Payslip</button>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>
